@@ -18,6 +18,7 @@ import java.util.LinkedList;
 
 public class CustomViewQuestion extends View{
 
+    //me
     Context context;
     int width, height;
 
