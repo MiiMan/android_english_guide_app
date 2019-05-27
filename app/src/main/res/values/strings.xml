@@ -44,13 +44,13 @@
     <array name="tests_name">
         <item>Тесты</item>
         <item>Карточки</item>
-        <item>Свайп</item>
+        <item>Контрольный тест</item>
     </array>
 
     <array name="tests_desc">
         <item>Классические тесты</item>
         <item>Ответы true и false</item>
-        <item>Выберите ответ перетаскиванием</item>
+        <item>Сборник всех тестов по вопросу</item>
     </array>
 
     <array name="scenario_desc">
