@@ -1,0 +1,236 @@
+<resources>
+    <string name="app_name">Пунктуация</string>
+    <string name="theory">Теория</string>
+    <string name="test">Главное</string>
+
+    <string name="ex">Случаи:</string>
+    <string name="title_transition">title</string>
+
+    <array name="menu_orig">
+        <item>Apostrophe</item>
+        <item>Brackets</item>
+        <item>Colon</item>
+        <item>Comma</item>
+        <item>Exclamation mark</item>
+        <item>Full stop</item>
+        <item>Question mark</item>
+        <item>Hyphens</item>
+        <item>Inverted commas</item>
+        <item>Semicolon</item>
+        <item>Ellipses</item>
+    </array>
+    <array name="menu_ru">
+        <item>Апостроф</item>
+        <item>Скобки</item>
+        <item>Двоеточие</item>
+        <item>Запятая</item>
+        <item>Восклицательный знак</item>
+        <item>Точка</item>
+        <item>Вопросительный знак</item>
+        <item>Тире</item>
+        <item>Кавычки</item>
+        <item>Точка с запятой</item>
+        <item>Многоточие</item>
+    </array>
+
+
+    <array name="scenario_name">
+        <item>Родитель</item>
+        <item>Школьник</item>
+        <item>Выпускник</item>
+        <item>Преподаватель</item>
+    </array>
+
+    <array name="tests_name">
+        <item>Тесты</item>
+        <item>Карточки</item>
+        <item>Свайп</item>
+    </array>
+
+    <array name="tests_desc">
+        <item>Классические тесты</item>
+        <item>Ответы true и false</item>
+        <item>Выберите ответ перетаскиванием</item>
+    </array>
+
+    <array name="scenario_desc">
+        <item>Помогите своим детям</item>
+        <item>Азы пунктуации</item>
+        <item>Подготовка к экзамену</item>
+        <item>Теоретическая информация</item>
+    </array>
+
+    <string name="apostrophe_inform">используется для
+        обозначения пропуска буквы или цифры ( \' )</string>
+    <array name="apostrophe_text">
+        <item>Для образования сокращенных глагольных форм;</item>
+        <item>Для образования притяжательного падежа существительных:</item>
+        <item>-Обозначающих лица или животных;</item>
+        <item>-В устойчивых выражениях;</item>
+        <item>Знак апострофа указывает на пропуск букв:</item>
+        <item>-В сокращениях из нескольких слов;</item>
+        <item>-В сокращениях из одного слова;</item>
+        <item>-Может встречаться в других сокращениях, например
+            вместо первых двух цифр года;
+        </item>
+    </array>
+    <array name="apostrophe_ex">
+        <item>That’s all he’s interested in. \n \n
+            But still, that’s better than being a hooligan and shooting off zip guns and things like
+            that in his spare time, isn’t it? \n \n
+            "Isn’t it wonderful!" whispered Charlie. \n \n
+            "He’ll be perfectly safe," said Mr Wonka, giggling slightly.\n \n
+            "I don’t want to think about it!" shrieked MrsGloop.
+        </item>
+
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item>g’by (good by), so’s (so as), don’t (do not), I’m (I am) и.т.п.</item>
+        <item>t’day (today), ’cause (because), doin’ (doing) и.т.п.</item>
+        <item>winter of ’95 (1995)</item>
+    </array>
+
+    <string name="brackets_inform">знаки, используемые попарно для обозначения слов или
+        фигур. Имеются круглые скобки () и
+        квадратные скобки [].</string>
+    <array name="brackets_text">
+        <item>Заключают часть предложения, которая содержит пояснения;</item>
+        <item>Употребляются для выделения пояснений, содержащих цифры или перевод иностранных
+            слов;
+        </item>
+        <item>При сомнении автора в скобки заключают вопросительный и восклицательный знак;</item>
+    </array>
+    <array name="brackets_ex">
+        <item>And the one remaining squirrel (obviously the leader of them
+            all) climbed up on her shoulder and started tap-tap-tapping the
+            wretched girl’s head with its knuckles). \n \n
+            But it leapt sideways! And all the passengers (except Mr Wonka,
+            who was holding on to a strap from the ceiling) were flung off
+            their feet on to the floor. \n \n
+            A great, craggy mountain made entirely of fudge, with Oompa-
+            Loompas (all roped together for safety) hacking huge hunks of
+            fudge out of its sides…
+        </item>
+        <item></item>
+        <item></item>
+    </array>
+
+    <string name="colon_inform">знак препинания (:),
+        часто используемый для обозначения перечисления.</string>
+    <array name="colon_text">
+        <item>Для разделения двух предложений (часто означает «то есть»);</item>
+        <item>Перед перечисляемыми однородными членами (после обобщающего слова);</item>
+        <item>Чтобы отметить введение поясняющего материала: цитат, списков, объяснений;</item>
+        <item>Перед длинным текстом прямой речи;</item>
+    </array>
+    <array name="colon_ex">
+        <item>But there was one other thing that the grown-ups
+            also knew, and it was this: that however small the
+            chance might be of striking lucky, the chance was there. \n \n
+            Richard’s work is unsatisfactory: his spelling is careless and writing
+            is bad.
+        </item>
+
+        <item>The agreement provides for the delivery of the following raw
+            materials: cotton, wool, jute, and others.
+        </item>
+
+        <item>It was the most terrible torturing thing you could imagine, and it
+            was this: \n \n
+            In the town itself, actually within sight of the house in which
+            Charlie lived, there was an ENORMOUS CHOCOLATE FACTORY! \n \n
+            He held up the paper so that they could see the huge headline:
+            WONKA FACTORY TO BE OPENED AT LAST TO LUCKY
+            FEW.
+        </item>
+
+        <item>Then once again Charlie saw those tiny twinkling smiling
+            wrinkles around the corners of the eyes, and when he began to
+            speak, his voice this time was like the voice of a giant, deep and
+            devilish, very loud and very slow: \n
+            ‘In the quelchyquaggysogmire, \n
+            In the mashymideousharshland, \n
+            At the witchy hour of gloominess, \n
+            All the grobes come oozing home…’
+        </item>
+    </array>
+
+    <string name="comma_inform">знак препинания (,), указывающий на небольшую интонационную
+        пауза и применяется для: списка элементов, разделения фраз, выделения главной части</string>
+    <array name="comma_text">
+        <item>Для разделения однородных членов предложения;</item>
+        <item>Для выделения приложения с пояснительными словами;</item>
+        <item>Для выделения самостоятельного причастного оборота;</item>
+        <item>Для выделения вводных слов, словосочетаний, предложений;</item>
+        <item>Для выделения обращения;</item>
+        <item>Перед подписью в конце писем;</item>
+        <item>Для отделения числа от года в обозначении дат;</item>
+        <item>Для разделения частей адреса;</item>
+    </array>
+    <array name="comma_ex">
+        <item>The only meals they could afford were bread and margarine for
+            breakfast, boiled potatoes and cabbage for lunch, and cabbage
+            soup for supper.
+        </item>
+
+        <item></item>
+        <item>It was Wonka’s factory, owned by a man called Mr Willy
+            Wonka, the greatest inventor and maker of chocolates that there
+            has ever been. \n \n
+            Little Charlie sat very still on the edge of the bed, staring at his
+            grandfather.
+        </item>
+        <item>Oh, how he loved that smell!</item>
+        <item>"My dear boy," said Grandpa Joe, "that is one of the great mysteries of the
+            chocolate-making world."
+        </item>
+        <item>Yoursfaithfully, WillyWonka.</item>
+        <item></item>
+        <item></item>
+    </array>
+
+    <string name="ex_mark_inform">знак препинания (!) используется после возгласлов и яростных команд.</string>
+    <string name="welcome_2">Я помогу вам понять и закрепить правила пунктуации английского языка.</string>
+    <string name="welcome_1">Я - ваше приложение.</string>
+    <string name="welcome_1_title">Привет!</string>
+    <string name="welcome_2_title">Обо мне:</string>
+    <string name="welcome_3_title">Выберете сценарий:</string>
+    <string name="questionCheck">Проверить</string>
+    <string name="firstActivity_next">Далее</string>
+    <string name="question_test">Составление вопроса</string>
+    <string name="question_test_desc">В гостях у сказки</string>
+    <array name="ex_mark_text">
+        <item>Для выражения сильных эмоций, приказа,
+            восклицания;
+        </item>
+        <item>Может использоваться в середине предложения для того, чтобы
+            обратить внимание читателя на определенные слова и
+            выражения;
+        </item>
+        <item>Часто используется в звукоподражательных словах;</item>
+        <item>Если является частью названия книги, которое выделено
+            курсивом, то он тоже должен быть выделен курсивом;
+        </item>
+    </array>
+    <array name="ex_mark_ex">
+        <item>‘Wonka’s Whipple- ScrumptionsFudgemallow Delight!’ cried Grandpa George. \n \n
+            It’s the best of them all! You’ll just love it!’ he cried. \n \n
+            ‘Happy birthday!’ cried the four grandparents, as Charlie came into their room early the
+            next morning.
+        </item>
+        <item>And the others all cried, ‘No, no! We wouldn’t dream of it! It’sallyours!’ \n \n
+            ‘Certainly not!’ his mother said. \n \n
+            ‘Quiet!’ he shouted, when someone tried to ask him a question. \n \n
+            ‘Didn’t I tell you not to interrupt? This show’s an absolute whiz-banger! It’s
+            terrific!’ he shouted.
+        </item>
+        <item>He heard bow-wow! from the neighbour’s house. \n \n
+            ‘Ssshh-ssshh-ssshh!’ said Mr Wonka. \n \n
+            ‘Oh-oh-oh!’ screamed Grandma Josephine. \n \n
+            ‘Hey!’ shouted Grandpa Joe.
+        </item>
+        <item>-</item>
+    </array>
+</resources>

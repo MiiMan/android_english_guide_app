@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".TheoryActivity"
+    android:background="@color/bg_screen3">
+
+    <TextView
+        android:layout_margin="@dimen/fab_margin"
+        android:layout_above="@+id/scenarioRecycler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/FirstScenario"
+        android:text="@string/welcome_3_title"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:textColor="@color/white"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/scenarioRecycler"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+
+    <TextView
+        android:layout_margin="@dimen/fab_margin"
+        android:layout_below="@+id/scenarioRecycler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="В дальнейшем можно будет поменять в настройках."
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        android:textColor="@color/white"/>
+
+
+</RelativeLayout>
