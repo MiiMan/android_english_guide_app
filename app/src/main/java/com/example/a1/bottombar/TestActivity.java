@@ -4,8 +4,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -16,6 +19,12 @@ public class TestActivity extends AppCompatActivity {
     RelativeLayout main;
     TextView textView, right;
     String title;
+
+    ScrollView menu_text;
+    LinearLayout linear_text;
+
+    View[] view_text;
+    TextView[] title_text, text_text;
 
     int n = 0;
     int t;
@@ -38,6 +47,8 @@ public class TestActivity extends AppCompatActivity {
             cardTest();
         } else if (title.equals("Тесты")){
             testTest();
+        } else if (title.equals("В гостях у сказки") || title.equals("Деепричастный оборот")) {
+            textBox();
         }
 
     }
@@ -149,6 +160,42 @@ public class TestActivity extends AppCompatActivity {
             }
         });
         main.addView(a.toView());
+    }
+    void textBox() {
+
+        ArrayList<String[]> arrayList = new ArrayList<>();
+
+        for (int i = 0; i < 100; i++) {
+            arrayList.add(new String[]{"Заголовок", "Текст"});
+        }
+
+        menu_text = new ScrollView(this);
+        menu_text.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT));
+        main.addView(menu_text);
+
+        linear_text = new LinearLayout(this);
+        linear_text.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT));
+        linear_text.setOrientation(LinearLayout.VERTICAL);
+
+        menu_text.addView(linear_text);
+
+        view_text = new View[arrayList.size()];
+        title_text = new TextView[view_text.length];
+        text_text = new TextView[view_text.length];
+
+        for (int i = 0; i < view_text.length; i++) {
+            view_text[i] = LayoutInflater.from(this).inflate(R.layout.textbox, linear_text, false);
+            linear_text.addView(view_text[i]);
+
+            title_text[i] = view_text[i].findViewById(R.id.title);
+            text_text[i] = view_text[i].findViewById(R.id.text);
+
+            title_text[i].setText(arrayList.get(i)[0]);
+            text_text[i].setText(arrayList.get(i)[1]);
+        }
+
     }
 
 }

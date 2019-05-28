@@ -96,9 +96,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onItemClick(CardItem item, TextView v) {
 
-            Intent intent = new Intent(MainActivity.this, TestActivity.class);
-            intent.putExtra("title", item.title);
-            startActivity(intent);
+            buttonStartIntent(item.title);
         }
 
     };
@@ -187,18 +185,23 @@ public class MainActivity extends AppCompatActivity {
 
         itemAdapterMain = new ItemAdapter(onItemClickListenerMain, listMain, R.layout.testlist_item, true);
         recyclerViewMain.setAdapter(itemAdapterMain);
-        recyclerViewMain.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true));
+        recyclerViewMain.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
+
+        SimpleButton b = new SimpleButtonDesc(R.layout.button_with_desc, this, linearLayoutMain,
+                getString(R.string.question_test_desc),"Сказки о моем проекте", images[4]);
+        b.setOnClickListener(onClickListenerButton);
+        linearLayoutMain.addView(b.toView());
 
         SimpleButton a = new SimpleButton(R.layout.mainbutton, this, linearLayoutMain,
                 getString(R.string.question_test), images[3]);
         a.setOnClickListener(onClickListenerButton);
         linearLayoutMain.addView(a.toView());
 
-        SimpleButton b = new SimpleButtonDesc(R.layout.button_with_desc, this, linearLayoutMain,
-                getString(R.string.question_test_desc),"", images[4]);
-        b.setOnClickListener(onClickListenerButton);
-        linearLayoutMain.addView(b.toView());
+        SimpleButton c = new SimpleButtonDesc(R.layout.button_with_desc, this, linearLayoutMain,
+                getString(R.string.deepr),"Теоретическая часть по запятой", images[4]);
+        c.setOnClickListener(onClickListenerButton);
+        linearLayoutMain.addView(c.toView());
     }
 
     private void buttonStartIntent(String title){
@@ -210,10 +213,5 @@ public class MainActivity extends AppCompatActivity {
     private void setMode(byte currentMode){
         this.currentMode = currentMode;
         currentModeName = currentModes[currentMode];
-    }
-
-    private float pxFromDp(float dp) {
-        return dp
-                * getApplicationContext().getResources().getDisplayMetrics().density;
     }
 }

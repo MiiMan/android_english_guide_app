@@ -1,5 +1,6 @@
 package com.example.a1.bottombar;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
@@ -54,6 +55,10 @@ public class TheoryActivity extends AppCompatActivity {
         resource_list.put("Colon", new Integer[]{R.array.colon_text, R.array.colon_ex, R.string.colon_inform});
         resource_list.put("Comma", new Integer[]{R.array.comma_text, R.array.comma_ex, R.string.comma_inform});
         resource_list.put("Exclamation mark", new Integer[]{R.array.ex_mark_text, R.array.ex_mark_ex, R.string.ex_mark_inform});
+        resource_list.put("Full stop", new Integer[]{R.array.full_stop_text, R.array.full_stop_ex, R.string.full_stop_inform});
+        resource_list.put("Question mark", new Integer[]{R.array.q_mark_text, R.array.q_mark_ex, R.string.q_mark_inform});
+        resource_list.put("Hyphens", new Integer[]{R.array.hyphens_text, R.array.hyphens_ex, R.string.hyphens_inform});
+        resource_list.put("Dash", new Integer[]{R.array.dash_text, R.array.dash_ex, R.string.dash_inform});
 
         try {
             text = getResources().getStringArray(resource_list.get(title)[0]);
@@ -114,6 +119,18 @@ public class TheoryActivity extends AppCompatActivity {
             textView = view.findViewById(R.id.title);
             textView.setText(cardText.get(0));
 
+            if (title.equals("Comma") && cardText.get(0).equals("В деепричастных оборотах;")) {
+                view.setBackgroundColor(Color.CYAN);
+                view.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(TheoryActivity.this, TestActivity.class);
+                        intent.putExtra("title", "Деепричастный оборот");
+                        startActivity(intent);
+                    }
+                });
+            }
+
 
             linearLayout = view.findViewById(R.id.linearlayout);
 
@@ -155,6 +172,7 @@ public class TheoryActivity extends AppCompatActivity {
             }
 
             a.addView(view);
+
         }
     }
 
