@@ -124,7 +124,7 @@ public class TheoryActivity extends AppCompatActivity {
                 view.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(TheoryActivity.this, TestActivity.class);
+                        Intent intent = new Intent(TheoryActivity.this, TextActivity.class);
                         intent.putExtra("title", "Деепричастный оборот");
                         startActivity(intent);
                     }

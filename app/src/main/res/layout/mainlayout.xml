@@ -50,7 +50,7 @@
 
         <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="400dp"
+            android:layout_height="350dp"
             android:id="@+id/cards"></android.support.v7.widget.RecyclerView>
 
     </LinearLayout>

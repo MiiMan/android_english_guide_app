@@ -1,6 +1,7 @@
 package com.example.a1.bottombar;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -95,8 +96,7 @@ public class MainActivity extends AppCompatActivity {
     ItemAdapter.OnItemClickListener onItemClickListenerMain = new ItemAdapter.OnItemClickListener() {
         @Override
         public void onItemClick(CardItem item, TextView v) {
-
-            buttonStartIntent(item.title);
+            buttonStartTestIntent(item.title);
         }
 
     };
@@ -104,7 +104,14 @@ public class MainActivity extends AppCompatActivity {
     SimpleButton.OnClickListener onClickListenerButton = new SimpleButton.OnClickListener() {
         @Override
         public void onClick(String text) {
-            buttonStartIntent(text);
+            buttonStartTestIntent(text);
+        }
+    };
+
+    SimpleButton.OnClickListener onClickListenerButtonText = new SimpleButton.OnClickListener() {
+        @Override
+        public void onClick(String text) {
+            buttonStartTextIntent(text);
         }
     };
 
@@ -190,7 +197,7 @@ public class MainActivity extends AppCompatActivity {
 
         SimpleButton b = new SimpleButtonDesc(R.layout.button_with_desc, this, linearLayoutMain,
                 getString(R.string.question_test_desc),"Сказки о моем проекте", images[4]);
-        b.setOnClickListener(onClickListenerButton);
+        b.setOnClickListener(onClickListenerButtonText);
         linearLayoutMain.addView(b.toView());
 
         SimpleButton a = new SimpleButton(R.layout.mainbutton, this, linearLayoutMain,
@@ -200,12 +207,18 @@ public class MainActivity extends AppCompatActivity {
 
         SimpleButton c = new SimpleButtonDesc(R.layout.button_with_desc, this, linearLayoutMain,
                 getString(R.string.deepr),"Теоретическая часть по запятой", images[4]);
-        c.setOnClickListener(onClickListenerButton);
+        c.setOnClickListener(onClickListenerButtonText);
         linearLayoutMain.addView(c.toView());
     }
 
-    private void buttonStartIntent(String title){
+    private void buttonStartTestIntent(String title){
         Intent intent = new Intent(MainActivity.this, TestActivity.class);
+        intent.putExtra("title", title);
+        startActivity(intent);
+    }
+
+    private void buttonStartTextIntent(String title){
+        Intent intent = new Intent(MainActivity.this, TextActivity.class);
         intent.putExtra("title", title);
         startActivity(intent);
     }

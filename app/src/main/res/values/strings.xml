@@ -278,16 +278,23 @@
     <string name="q_mark_inform">Используется в конце вопросов или в другом контексте, где подразумевается сомнение.</string>
     <array name="q_mark_text">
         <item>Ставится в конце вопросительных предложений;</item>
-        <item>После косвенного вопроса (вопроса, передаваемого в косвенной речи) являющегося дополнительным придаточным предложением не употребляется, вместо него употребляется точка;</item>
-        <item>Ставится в конце косвенного вопроса, когда главное предложение является вопросительным;</item>
+        <item>После косвенного вопроса (вопроса, передаваемого в косвенной речи) являющегося
+            дополнительным придаточным предложением не употребляется, вместо него употребляется
+            точка;
+        </item>
+        <item>Ставится в конце косвенного вопроса, когда главное предложение является
+            вопросительным;
+        </item>
     </array>
 
     <array name="q_mark_ex">
         <item>‘Are you sure you want to spend your money on that, Grandpa?’ Charlie whispered.
             \n\nHad somebody dropped it?
             \n\n‘Are you crazy?’ shouted the woman who was standing equally close.
-            \n\nThen, very softly, Grandpa Joe said, ‘You’re pulling our legs, Charlie, aren’t you? You’re having a little joke?’
-            \n\nDid you know that he’s invented a way of making chocolate ice cream so that it stays cold for hours and hours without being in the refrigerator?
+            \n\nThen, very softly, Grandpa Joe said, ‘You’re pulling our legs, Charlie, aren’t you?
+            You’re having a little joke?’
+            \n\nDid you know that he’s invented a way of making chocolate ice cream so that it stays
+            cold for hours and hours without being in the refrigerator?
         </item>
 
         <item>She asked which one Charlie Bucket was.
@@ -299,32 +306,45 @@
 
     <string name="hyphens_inform">Используется для разделения частей некоторых составных слов, для связи слов фразы и между слогами слова, разделенного между двумя последовательными строками.</string>
     <array name="hyphens_text">
-        <item>Основное назначение дефиса состоит в соединении двух и более слов в одно составное;</item>
+        <item>Основное назначение дефиса состоит в соединении двух и более слов в одно составное;
+        </item>
         <item>В составных числительных до ста;</item>
         <item>В сложных словах, второй элемент которых пишется с заглавной буквы;</item>
         <item>В сочетании существительного с числительным для образования прилагательного;</item>
         <item>Чтобы разделить две одинаковые буквы в приставке/суффиксе и основе;</item>
         <item>В словосочетаниях, которые являются определениями к существительным;</item>
-        <item>При прибавлении приставки к именам собственным. Также дефис используется при переносе слов.</item>
+        <item>При прибавлении приставки к именам собственным. Также дефис используется при переносе
+            слов.
+        </item>
     </array>
 
     <array name="hyphens_ex">
-        <item>‘Have you noticed that all the carpets are wall-to-wall, Mr Walter Wall?’ said the President.
-            \n\nThere were managers, assistant managers, desk-clerks, waitresses , bell – boys, chambermaids, pastry chefs and hall porters.
+        <item>‘Have you noticed that all the carpets are wall-to-wall, Mr Walter Wall?’ said the
+            President.
+            \n\nThere were managers, assistant managers, desk-clerks, waitresses , bell – boys,
+            chambermaids, pastry chefs and hall porters.
         </item>
-        <item>Mr Wonka had all his booster-rockets firing and the Elevator was reaching speeds of thirty-four thousand miles an hour instead of the normal seventeen thousand.</item>
+        <item>Mr Wonka had all his booster-rockets firing and the Elevator was reaching speeds of
+            thirty-four thousand miles an hour instead of the normal seventeen thousand.
+        </item>
         <item>‘Knock – Knock,’ said the President.</item>
-        <item>I saw a big six-foot-tall assistant-manager being swallowed up just like you’d swallow a lump of ice-cream, Mr President!</item>
+        <item>I saw a big six-foot-tall assistant-manager being swallowed up just like you’d swallow
+            a lump of ice-cream, Mr President!
+        </item>
         <item></item>
-        <item>He trotted off rapidly down the corridor with the tails of his plum-coloured velvet coat flapping behind him, and the visitors all hurried after him.
-            \n\nAbout three – quarters of the way up, in the widest part, there were two large round eyes as big as tea – cups.
+        <item>He trotted off rapidly down the corridor with the tails of his plum-coloured velvet
+            coat flapping behind him, and the visitors all hurried after him.
+            \n\nAbout three – quarters of the way up, in the widest part, there were two large round
+            eyes as big as tea – cups.
         </item>
         <item></item>
     </array>
 
     <string name="dash_inform">используются для разделения групп слов, а не для разделения частей слов, как дефис.</string>
     <array name="dash_text">
-        <item>Перед перечисляемыми однородными членами или после них, если они употребляются с обобщающими словами;</item>
+        <item>Перед перечисляемыми однородными членами или после них, если они употребляются с
+            обобщающими словами;
+        </item>
         <item>Для обозначения на письме длительной паузы с целью произвести эффект;</item>
         <item>При неожиданном повороте мыслей;</item>
         <item>Для усиления эмоциональной выразительности сказанного;</item>
@@ -333,14 +353,22 @@
     </array>
 
     <array name="dash_ex">
-        <item>For now, I do invite you to come to my factory and be my guest for one whole day – you and all the others who are lucky enough to find my Golden Tickets.</item>
-        <item>‘And all the chocolate and sweets that you could eat for the rest of your life – free!’ said Grandpa George.
-            \n\nOn one side of it, printed by some clever method in jet-black letters, was the invitation itself – from Mr Wonka.
+        <item>For now, I do invite you to come to my factory and be my guest for one whole day – you
+            and all the others who are lucky enough to find my Golden Tickets.
         </item>
-        <item>One more thing – be certain to have this ticket with you, otherwise you won’t be admitted.</item>
-        <item>Now the first thing to decide is this – who is going to go with Charlie to the factory?’
+        <item>‘And all the chocolate and sweets that you could eat for the rest of your life –
+            free!’ said Grandpa George.
+            \n\nOn one side of it, printed by some clever method in jet-black letters, was the
+            invitation itself – from Mr Wonka.
+        </item>
+        <item>One more thing – be certain to have this ticket with you, otherwise you won’t be
+            admitted.
+        </item>
+        <item>Now the first thing to decide is this – who is going to go with Charlie to the
+            factory?’
             \n\nAnd his eyes – his eyes were most marvelously bright.
-            \n\nI, Willy Wonka, have decided to allow five children – just five, mind you, and no more – to visit my factory this year.
+            \n\nI, Willy Wonka, have decided to allow five children – just five, mind you, and no
+            more – to visit my factory this year.
         </item>
         <item>‘Read us what it says – quickly!’ said Mr Bucket.
             \n\n‘Well – that’s that!’ said Grandpa Joe brightly.
