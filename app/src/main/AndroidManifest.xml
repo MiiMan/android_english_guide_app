@@ -12,15 +12,13 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name"></activity>
+            android:label="@string/app_name" />
         <activity
             android:name=".TheoryActivity"
             android:theme="@style/ChildTheme" />
-
         <activity
             android:name=".TestActivity"
             android:theme="@style/ChildTheme" />
-
         <activity
             android:name=".FirstChangeActivity"
             android:theme="@style/FirstActivityTheme">
@@ -30,6 +28,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".TextActivity"></activity>
     </application>
 
 </manifest>

@@ -2,9 +2,11 @@ package com.example.a1.bottombar;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -12,11 +14,11 @@ import java.util.HashMap;
 
 public class CustomViewTest {
 
-    public interface OnChange {
-        void onTouchedWrong();
-        void onTouchedRight();
+    public interface OnClickListener {
+        void onClickedWrong();
+        void onClickedRight();
+        void defaultMethod();
     }
-
     static class Element {
         String question;
         HashMap<String, Boolean> answers;
@@ -49,17 +51,25 @@ public class CustomViewTest {
                 @Override
                 public void onClick(View v) {
                     setColor();
+                    isTouched = isTouched ? false : true;
+
                 }
             });
+        }
+
+        boolean getAnswer() {
+            if (isTrue == isTouched) {
+                return true;
+            } else {
+                return false;
+            }
         }
 
         void setColor() {
             if (!isTouched) {
                 root.setBackgroundColor(Color.BLUE);
-                isTouched = true;
             } else {
                 root.setBackgroundColor(Color.WHITE);
-                isTouched = false;
             }
         }
 
@@ -77,6 +87,7 @@ public class CustomViewTest {
 
     RelativeLayout cardView;
     TextView textView;
+    Button check;
 
     CustomViewTest (Context context, ViewGroup root) {
         this.context = context;
@@ -97,6 +108,8 @@ public class CustomViewTest {
         textView = view.findViewById(R.id.text);
         textView.setText(element.question);
 
+        check = view.findViewById(R.id.check);
+
         answers = new Answer[element.getAnswers().length];
         for (int i = 0; i < answers.length; i++) {
             answers[i] = new Answer(LayoutInflater.from(context).inflate(R.layout.cardtest_item, cardView, false), element.getAnswers()[i], element.answers.get(element.getAnswers()[i]));
@@ -105,7 +118,26 @@ public class CustomViewTest {
         }
     }
 
-    void check(){}
+    void setOnClickListener(final OnClickListener l){
+        check.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean f = false;
+                for (int i = 0; i < answers.length; i ++) {
+                    if (!element.answers.containsKey(element.getAnswers()[i]) == answers[i].getAnswer()) {
+                        l.onClickedWrong();
+                        f = true;
+                        break;
+                    }
+                }
+                if (!f) {
+                    l.onClickedRight();
+                }
+
+                l.defaultMethod();
+            }
+        });
+    }
 
 
     View toView(){

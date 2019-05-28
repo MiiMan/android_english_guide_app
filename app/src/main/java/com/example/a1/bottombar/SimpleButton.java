@@ -14,9 +14,9 @@ public class SimpleButton {
     private int resource_id;
     private String text;
 
-    private View view;
-    private ImageView imageView;
-    private TextView textView;
+    protected View view;
+    protected ImageView imageView;
+    protected TextView textView;
 
     public interface OnClickListener {
         void onClick(String text);

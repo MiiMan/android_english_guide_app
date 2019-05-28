@@ -37,18 +37,38 @@ public class TestActivity extends AppCompatActivity {
         } else if (title.equals("Карточки")) {
             cardTest();
         } else if (title.equals("Тесты")){
-            HashMap<String,Boolean> g = new HashMap<>();
-            g.put("Да", false);
-            g.put("Нет", false);
-            g.put("Не знаю", true);
-            CustomViewTest test = new CustomViewTest(this,main);
-            test.setElement(new CustomViewTest.Element("Тебя зовут гена?", g ));
-
-            main.addView(test.toView());
+            testTest();
         }
 
     }
 
+    void testTest(){
+        HashMap<String,Boolean> g = new HashMap<>();
+        g.put("Да", false);
+        g.put("Нет", false);
+        g.put("Не знаю", true);
+        CustomViewTest test = new CustomViewTest(this,main);
+        test.setElement(new CustomViewTest.Element("Тебя зовут гена?", g ));
+
+
+        test.setOnClickListener(new CustomViewTest.OnClickListener() {
+            @Override
+            public void onClickedWrong() {
+                right.setText("no");
+            }
+
+            @Override
+            public void onClickedRight() {
+                right.setText("yes");
+            }
+
+            @Override
+            public void defaultMethod() {
+
+            }
+        });
+        main.addView(test.toView());
+    }
     void questionTest(){
 
         final ArrayList<String[]> words = new ArrayList<>();

@@ -195,9 +195,8 @@ public class MainActivity extends AppCompatActivity {
         a.setOnClickListener(onClickListenerButton);
         linearLayoutMain.addView(a.toView());
 
-        SimpleButton b = new SimpleButton(R.layout.mainbutton, this, linearLayoutMain,
-                getString(R.string.question_test_desc), images[4]);
-
+        SimpleButton b = new SimpleButtonDesc(R.layout.button_with_desc, this, linearLayoutMain,
+                getString(R.string.question_test_desc),"", images[4]);
         b.setOnClickListener(onClickListenerButton);
         linearLayoutMain.addView(b.toView());
     }
