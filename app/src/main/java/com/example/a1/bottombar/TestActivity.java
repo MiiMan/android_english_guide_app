@@ -1,13 +1,12 @@
 package com.example.a1.bottombar;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -67,7 +66,8 @@ public class TestActivity extends AppCompatActivity {
 
             @Override
             public void defaultMethod() {
-
+                Intent intent = new Intent(TestActivity.this, ResultActivity.class);
+                startActivity(intent);
             }
         });
         main.addView(test.toView());

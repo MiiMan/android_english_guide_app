@@ -17,6 +17,11 @@
     <string name="question_test">Составление вопроса</string>
     <string name="question_test_desc">В гостях у сказки</string>
     <string name="deepr">Деепричастный оборот</string>
+    <string name="start">Начать</string>
+    <string name="result">Результат</string>
+
+
+    <string name="options">Настройки</string>
 
     <array name="menu_orig">
         <item>Apostrophe</item>
@@ -380,6 +385,7 @@
     </array>
 
     <string name="inv_commas">ставят вокруг цитат и произнесенных слов.</string>
+    <string name="finish">Закончить</string>
     <array name="inv_commas_text">
         <item>Для обозначения начала и конца прямой речи и цитаты;</item>
         <item>Для выделения названий книг, журналов, фильмов и т.д.;</item>
@@ -387,11 +393,15 @@
     </array>
 
     <array name="inv_commas_ex">
-        <item>One evening, when Charlie went in to see his grandparents, he said to them, ‘Is it really true that Wonka’s Chocolate Factory is the biggest in the world?’
+        <item>One evening, when Charlie went in to see his grandparents, he said to them, ‘Is it
+            really true that Wonka’s Chocolate Factory is the biggest in the world?’
             \n\n‘Tell Charlie about that crazy Indian prince,’ said Grandma Josephine.
             \n\n‘Listen,’ said Grandpa Joy, ‘and I’ll tell you.’
             \n\n‘If he’s perfectly safe, then where is he?’ snapped MrsGloop.
-            \n\n‘The creamiest loveliest chocolate I’ve ever tasted!’ said Gandpa Joe, smacking his lips.
+            \n\n‘The creamiest loveliest chocolate I’ve ever tasted!’ said Gandpa Joe, smacking his
+            lips.
         </item>
+        <item></item>
+        <item></item>
     </array>
 </resources>

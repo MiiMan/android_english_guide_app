@@ -18,6 +18,7 @@
             android:theme="@style/ChildTheme" />
         <activity
             android:name=".TestActivity"
+            android:noHistory="true"
             android:theme="@style/ChildTheme" />
         <activity
             android:name=".FirstChangeActivity"
@@ -31,7 +32,13 @@
         <activity
             android:name=".TextActivity"
             android:theme="@style/ChildTheme" />
-        <activity android:name=".SettingActivity"></activity>
+        <activity
+            android:name=".SettingActivity"
+            android:noHistory="true"
+            android:theme="@style/ChildTheme" />
+        <activity android:name=".ResultActivity"
+            android:noHistory="true"
+            android:theme="@style/ChildTheme" ></activity>
     </application>
 
 </manifest>

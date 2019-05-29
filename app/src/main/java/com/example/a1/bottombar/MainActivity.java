@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private String currentModeName;
 
 
+    private BottomNavigationView navigation;
     private LinearLayout linearLayout;
     private RecyclerView recyclerViewTheory;
     private ItemAdapter itemAdapterTheory;
@@ -37,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView textViewStatistic;
 
     String[] orig, local, tests_orig, tests_local;
+
+    boolean activity = true;
 
     int[] imageTheory = {R.mipmap.apostrophe,
                         R.mipmap.brackets,
@@ -68,9 +71,11 @@ public class MainActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.theory:
                     linearLayout.addView(recyclerViewTheory);
+                    activity = true;
                     return true;
                 case R.id.test:
                     linearLayout.addView(viewMain);
+                    activity = false;
                     return true;
             }
             return false;
@@ -147,11 +152,26 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         initTheory();
         initMain();
+
+        linearLayout.addView(recyclerViewTheory);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if (activity) {
+            navigation.getMenu().getItem(1).setChecked(true);
+            navigation.getMenu().getItem(0).setChecked(false);
+        } else {
+            navigation.getMenu().getItem(0).setChecked(true);
+            navigation.getMenu().getItem(1).setChecked(false);
+        }
     }
 
     private void initTheory() {
@@ -172,8 +192,6 @@ public class MainActivity extends AppCompatActivity {
         }
         itemAdapterTheory = new ItemAdapter(onItemClickListenerTheory, listTheory, R.layout.list_item, true);
         recyclerViewTheory.setAdapter(itemAdapterTheory);
-
-        linearLayout.addView(recyclerViewTheory);
     }
 
 
@@ -223,7 +241,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void buttonStartTestIntent(String title){
-        Intent intent = new Intent(MainActivity.this, TestActivity.class);
+        Intent intent = new Intent(MainActivity.this, SettingActivity.class);
         intent.putExtra("title", title);
         startActivity(intent);
     }
