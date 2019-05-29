@@ -1,11 +1,8 @@
 package com.example.a1.bottombar;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.RequiresApi;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -41,11 +38,26 @@ public class MainActivity extends AppCompatActivity {
 
     String[] orig, local, tests_orig, tests_local;
 
-    int[] images = {R.mipmap.first,
+    int[] imageTheory = {R.mipmap.apostrophe,
+                        R.mipmap.brackets,
+                        R.mipmap.colon,
+                        R.mipmap.comma,
+                        R.mipmap.ex_mark,
+                        R.mipmap.full_stop,
+                        R.mipmap.q_mark,
+                        R.mipmap.hyphens,
+                        R.mipmap.dash,
+                        R.mipmap.inverted_commas,
+                        R.mipmap.semicolon,
+                        R.mipmap.fractional_f,
+                        R.mipmap.dots};
+
+    int[] imagesMain = {R.mipmap.first,
                     R.mipmap.second,
                     R.mipmap.third,
                     R.mipmap.fourth,
-                    R.mipmap.fifth};
+                    R.mipmap.fifth,
+                    R.mipmap.sixth};
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -66,7 +78,6 @@ public class MainActivity extends AppCompatActivity {
     };
 
     private Spinner.OnItemSelectedListener spinnerClickListener = new Spinner.OnItemSelectedListener(){
-        @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
         @Override
         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
             setMode((byte) position);
@@ -116,7 +127,6 @@ public class MainActivity extends AppCompatActivity {
     };
 
 
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -158,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
         listTheory = new ArrayList<>();
 
         for (int i = 0; i < orig.length; i++) {
-            listTheory.add(new CardItem(orig[i], local[i], R.mipmap.theory));
+            listTheory.add(new CardItem(orig[i], local[i], imageTheory[i]));
         }
         itemAdapterTheory = new ItemAdapter(onItemClickListenerTheory, listTheory, R.layout.list_item, true);
         recyclerViewTheory.setAdapter(itemAdapterTheory);
@@ -166,7 +176,7 @@ public class MainActivity extends AppCompatActivity {
         linearLayout.addView(recyclerViewTheory);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+
     private void initMain() {
 
         tests_orig = getResources().getStringArray(R.array.tests_name);
@@ -183,11 +193,12 @@ public class MainActivity extends AppCompatActivity {
         recyclerViewMain = viewMain.findViewById(R.id.cards);
         recyclerViewMain.setHasFixedSize(true);
         recyclerViewMain.setOverScrollMode(View.OVER_SCROLL_NEVER);
+        recyclerViewMain.getRecycledViewPool();
 
         listMain = new ArrayList<>();
 
         for (int i = 0; i < tests_orig.length; i++) {
-            listMain.add(new CardItem(tests_orig[i], tests_local[i], images[i]));
+            listMain.add(new CardItem(tests_orig[i], tests_local[i], imagesMain[i]));
         }
 
         itemAdapterMain = new ItemAdapter(onItemClickListenerMain, listMain, R.layout.testlist_item, true);
@@ -196,17 +207,17 @@ public class MainActivity extends AppCompatActivity {
 
 
         SimpleButton b = new SimpleButtonDesc(R.layout.button_with_desc, this, linearLayoutMain,
-                getString(R.string.question_test_desc),"Сказки о моем проекте", images[4]);
+                getString(R.string.question_test_desc),"Сказки о моем проекте", imagesMain[4]);
         b.setOnClickListener(onClickListenerButtonText);
         linearLayoutMain.addView(b.toView());
 
         SimpleButton a = new SimpleButton(R.layout.mainbutton, this, linearLayoutMain,
-                getString(R.string.question_test), images[3]);
+                getString(R.string.question_test), imagesMain[3]);
         a.setOnClickListener(onClickListenerButton);
         linearLayoutMain.addView(a.toView());
 
         SimpleButton c = new SimpleButtonDesc(R.layout.button_with_desc, this, linearLayoutMain,
-                getString(R.string.deepr),"Теоретическая часть по запятой", images[4]);
+                getString(R.string.deepr),"Теоретическая часть по запятой", imagesMain[4]);
         c.setOnClickListener(onClickListenerButtonText);
         linearLayoutMain.addView(c.toView());
     }

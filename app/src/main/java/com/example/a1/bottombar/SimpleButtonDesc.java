@@ -11,7 +11,6 @@ public class SimpleButtonDesc extends SimpleButton {
     String subtext;
     TextView subTextView;
 
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     SimpleButtonDesc(int resource_id, Context context, ViewGroup root, String text, String subText, int image_res){
         super(resource_id, context, root, text, image_res);
         initResource(context, root);

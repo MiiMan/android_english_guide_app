@@ -42,21 +42,18 @@ class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder>{
         void onItemClick(CardItem item, TextView v);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public ItemViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(viewGroup.getContext()).inflate(mode, viewGroup, false);;
         ItemViewHolder tm = new ItemViewHolder(v);
         return tm;
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     public void onBindViewHolder(@NonNull ItemViewHolder itemViewHolder, int i) {
         itemViewHolder.title.setText(cardItem.get(i).title);
         itemViewHolder.text.setText(cardItem.get(i).text);
 
         if (image) {
-            itemViewHolder.imageView.setImageAlpha(80);
             itemViewHolder.imageView.setImageResource(cardItem.get(i).image);
         }
     }
@@ -76,7 +73,6 @@ class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder>{
         TextView title;
         TextView text;
         ImageView imageView;
-        @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
         ItemViewHolder(View itemView) {
             super(itemView);
             cv = (CardView)itemView.findViewById(R.id.card);

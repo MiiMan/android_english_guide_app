@@ -30,6 +30,7 @@
         <item>Dash</item>
         <item>Inverted commas</item>
         <item>Semicolon</item>
+        <item>Fractional feature</item>
         <item>Dots</item>
     </array>
     <array name="menu_ru">
@@ -44,6 +45,7 @@
         <item>Тире</item>
         <item>Кавычки</item>
         <item>Точка с запятой</item>
+        <item>Дробная черта</item>
         <item>Многоточие</item>
     </array>
 
@@ -62,6 +64,7 @@
     </array>
 
     <array name="tests_desc">
+        <item>Параметры тестов</item>
         <item>Классические тесты</item>
         <item>Ответы true и false</item>
         <item>Сборник всех тестов по вопросу</item>
@@ -374,5 +377,21 @@
             \n\n‘Well – that’s that!’ said Grandpa Joe brightly.
         </item>
         <item></item>
+    </array>
+
+    <string name="inv_commas">ставят вокруг цитат и произнесенных слов.</string>
+    <array name="inv_commas_text">
+        <item>Для обозначения начала и конца прямой речи и цитаты;</item>
+        <item>Для выделения названий книг, журналов, фильмов и т.д.;</item>
+        <item>Для выделения слова, которое употреблено не в своем обычном смысле.</item>
+    </array>
+
+    <array name="inv_commas_ex">
+        <item>One evening, when Charlie went in to see his grandparents, he said to them, ‘Is it really true that Wonka’s Chocolate Factory is the biggest in the world?’
+            \n\n‘Tell Charlie about that crazy Indian prince,’ said Grandma Josephine.
+            \n\n‘Listen,’ said Grandpa Joy, ‘and I’ll tell you.’
+            \n\n‘If he’s perfectly safe, then where is he?’ snapped MrsGloop.
+            \n\n‘The creamiest loveliest chocolate I’ve ever tasted!’ said Gandpa Joe, smacking his lips.
+        </item>
     </array>
 </resources>

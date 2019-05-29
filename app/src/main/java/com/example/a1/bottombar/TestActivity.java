@@ -19,11 +19,6 @@ public class TestActivity extends AppCompatActivity {
     TextView textView, right;
     String title;
 
-    ScrollView menu_text;
-    LinearLayout linear_text;
-
-    View[] view_text;
-    TextView[] title_text, text_text;
 
     int n = 0;
     int t;

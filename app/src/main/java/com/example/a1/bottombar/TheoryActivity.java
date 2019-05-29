@@ -32,7 +32,6 @@ public class TheoryActivity extends AppCompatActivity {
     private LinearLayout linearLayout;
 
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     protected void onCreate(Bundle savedInstanceState) {
         title = getIntent().getExtras().getString("title");
         lang = getIntent().getExtras().getString("orig");
@@ -59,6 +58,7 @@ public class TheoryActivity extends AppCompatActivity {
         resource_list.put("Question mark", new Integer[]{R.array.q_mark_text, R.array.q_mark_ex, R.string.q_mark_inform});
         resource_list.put("Hyphens", new Integer[]{R.array.hyphens_text, R.array.hyphens_ex, R.string.hyphens_inform});
         resource_list.put("Dash", new Integer[]{R.array.dash_text, R.array.dash_ex, R.string.dash_inform});
+        resource_list.put("Inverted commas", new Integer[]{R.array.inv_commas_text, R.array.inv_commas_ex, R.string.inv_commas});
 
         try {
             text = getResources().getStringArray(resource_list.get(title)[0]);
@@ -83,7 +83,6 @@ public class TheoryActivity extends AppCompatActivity {
         information.setText("- " + inform);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void initInformation(){
         a = findViewById(R.id.example);
 
