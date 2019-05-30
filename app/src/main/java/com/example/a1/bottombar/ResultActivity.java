@@ -22,6 +22,7 @@ public class ResultActivity extends AppCompatActivity {
         titleView.setText(getString(R.string.result));
 
         textView = findViewById(R.id.result);
+        textView.setText(getIntent().getExtras().getString("text"));
 
         button = findViewById(R.id.finish);
         button.setOnClickListener(new View.OnClickListener() {

@@ -35,10 +35,11 @@ public class TextActivity extends AppCompatActivity {
 
         ArrayList<String[]> arrayList = new ArrayList<>();
 
-        for (int i = 0; i < 100; i++) {
-            arrayList.add(new String[]{"Заголовок", "Текст"});
+        if (title.equals(getString(R.string.deepr))) {
+            for (int i = 0; i < 2; i++) {
+                arrayList.add(new String[]{getResources().getStringArray(R.array.deepr_info)[i], getResources().getStringArray(R.array.deepr_text)[i]});
+            }
         }
-
         view_text = new View[arrayList.size()];
         title_text = new TextView[view_text.length];
         text_text = new TextView[view_text.length];

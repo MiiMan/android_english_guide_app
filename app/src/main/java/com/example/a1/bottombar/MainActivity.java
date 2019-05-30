@@ -55,12 +55,9 @@ public class MainActivity extends AppCompatActivity {
                         R.mipmap.fractional_f,
                         R.mipmap.dots};
 
-    int[] imagesMain = {R.mipmap.first,
-                    R.mipmap.second,
-                    R.mipmap.third,
-                    R.mipmap.fourth,
-                    R.mipmap.fifth,
-                    R.mipmap.sixth};
+    int[] imageMain = {R.mipmap.test,
+                    R.mipmap.card,
+                    R.mipmap.c_test};
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -216,7 +213,7 @@ public class MainActivity extends AppCompatActivity {
         listMain = new ArrayList<>();
 
         for (int i = 0; i < tests_orig.length; i++) {
-            listMain.add(new CardItem(tests_orig[i], tests_local[i], imagesMain[i]));
+            listMain.add(new CardItem(tests_orig[i], tests_local[i], imageMain[i]));
         }
 
         itemAdapterMain = new ItemAdapter(onItemClickListenerMain, listMain, R.layout.testlist_item, true);
@@ -225,17 +222,17 @@ public class MainActivity extends AppCompatActivity {
 
 
         SimpleButton b = new SimpleButtonDesc(R.layout.button_with_desc, this, linearLayoutMain,
-                getString(R.string.question_test_desc),"Сказки о моем проекте", imagesMain[4]);
+                getString(R.string.question_test_desc),"Сказки о моем проекте", R.mipmap.scaz);
         b.setOnClickListener(onClickListenerButtonText);
         linearLayoutMain.addView(b.toView());
 
         SimpleButton a = new SimpleButton(R.layout.mainbutton, this, linearLayoutMain,
-                getString(R.string.question_test), imagesMain[3]);
+                getString(R.string.question_test), R.mipmap.question);
         a.setOnClickListener(onClickListenerButton);
         linearLayoutMain.addView(a.toView());
 
         SimpleButton c = new SimpleButtonDesc(R.layout.button_with_desc, this, linearLayoutMain,
-                getString(R.string.deepr),"Теоретическая часть по запятой", imagesMain[4]);
+                getString(R.string.deepr),"Теоретическая часть по запятой", R.mipmap.scaz);
         c.setOnClickListener(onClickListenerButtonText);
         linearLayoutMain.addView(c.toView());
     }

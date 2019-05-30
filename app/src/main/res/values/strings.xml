@@ -69,9 +69,8 @@
     </array>
 
     <array name="tests_desc">
-        <item>Параметры тестов</item>
         <item>Классические тесты</item>
-        <item>Ответы true и false</item>
+        <item>Выбор ответа смахиванием</item>
         <item>Сборник всех тестов по вопросу</item>
     </array>
 
@@ -403,5 +402,42 @@
         </item>
         <item></item>
         <item></item>
+    </array>
+
+    <array name="deepr_info">
+        <item>Длинные причастные, деепричастные обороты и инфинитивные конструкции выделяются запятой:</item>
+        <item>Сложноподчинённые предложения с союзом but:</item>
+    </array>
+
+    <array name="deepr_text">
+        <item>Tom sat down, feeling bad.
+            \n\nSoon Ben Rogers appeared, eating an apple.
+            \n\nBen watched every move, getting more interested.
+            \n\nIn an instant they were rolling around on the ground, fighting like cats.
+            \n\nSoon Tom was sitting on the top of the new boy, hitting him with his fists.
+            \n\nTom came up to the fence and leaned on it, hoping she would stay longer.
+            \n\nTom went back to the empty ferry, untied the rowing boat and rowed back across the river to the island.
+            \n\nNow Tom began to write something on his slate, hiding it with his left hand.
+            \n\nScrooge went back to his work, feeling pleased with himself.
+            \n\nIt wore a short, white robe, covered with both summer and winter flowers.
+            \n\nStanding on the steps to receive them was an old woman, neatly dressed in black silk, with a white cap and apron.
+            \n\nAll around them were young schoolboys on horses and in farmers’ carts, laughing and wishing each other a merry Christmas.
+            \n\nHe was not reading this time, but was walking up and down, looking very unhappy.
+            \n\nTogether the two young clerks put away all the pens and papers, and, following Fezziwig’s orders, cleared all the furniture away from the centre of the room.
+            \n\nFeeling very tired, he climbed into bed and at once fell into a deep, heavy sleep.
+            \n\nHer eldest son, christened Washington by his parents, was a fair-haired man, rather good-looking young man.
+            \n\nFollowing her, they passed through the Tudor hall into the library, a long, low room, paneled in black oak, at the end of which was a large stained-glass window.
+            \n\nWith these words the United States Minister laid the bottle down on a marble table, and, closing his door, went back to bed.
+            </item>
+        <item>Tom tried hard to concentrate on his book, but his ideas wandered.
+            \n\nThe girl tried to see, butTom didn’t let her.
+            \n\nThey were too hungry to fish, but they ate lots of cold ham, and then lay down in the shade to talk.
+            \n\nHe hoped they would stop, but they didn’t.
+            \n\nScrooge had a very small fire, but Bob’s fire was much smaller.
+            \n\nThe quarter of an hour passed very slowly, but at last he heard the clock striking the four quarters.
+            \n\nIn fact it was only a small chicken, but it seemed large to the excited children.
+            \n\nThe spirit didn’t stay long here, but told Scrooge to hold his robe again.
+            \n\nIt had long, white hair, but its skin was soft and young.
+        </item>
     </array>
 </resources>

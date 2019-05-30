@@ -2,7 +2,6 @@ package com.example.a1.bottombar;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -92,6 +91,13 @@ public class CustomViewTest {
     CustomViewTest (Context context, ViewGroup root) {
         this.context = context;
         this.root = root;
+
+        view = LayoutInflater.from(context).inflate(R.layout.originaltestlayout, root, false);
+        cardView = view.findViewById(R.id.card);
+
+        container = view.findViewById(R.id.container);
+        textView = view.findViewById(R.id.text);
+        check = view.findViewById(R.id.check);
     }
 
     void setElement(Element e) {
@@ -100,15 +106,9 @@ public class CustomViewTest {
     }
 
     void initView() {
-        view = LayoutInflater.from(context).inflate(R.layout.originaltestlayout, root, false);
-        cardView = view.findViewById(R.id.card);
 
-        container = view.findViewById(R.id.container);
-
-        textView = view.findViewById(R.id.text);
+        container.removeAllViews();
         textView.setText(element.question);
-
-        check = view.findViewById(R.id.check);
 
         answers = new Answer[element.getAnswers().length];
         for (int i = 0; i < answers.length; i++) {

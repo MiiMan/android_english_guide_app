@@ -19,6 +19,7 @@ public class TestActivity extends AppCompatActivity {
     String title;
 
 
+
     int n = 0;
     int t;
     @Override
@@ -40,18 +41,55 @@ public class TestActivity extends AppCompatActivity {
             cardTest();
         } else if (title.equals("Тесты")){
             testTest();
+        } else if (title.equals("Контрольный тест")){
+            controlTest();
         }
 
     }
 
-    void testTest(){
-        HashMap<String,Boolean> g = new HashMap<>();
-        g.put("Да", false);
-        g.put("Нет", false);
-        g.put("Не знаю", true);
-        CustomViewTest test = new CustomViewTest(this,main);
-        test.setElement(new CustomViewTest.Element("Тебя зовут гена?", g ));
+    void finishTest(String test) {
+        Intent intent = new Intent(TestActivity.this, ResultActivity.class);
+        intent.putExtra("text", test);
+        startActivity(intent);
+    }
 
+    void controlTest(){
+        final CustomViewTest test = new CustomViewTest(this,main);
+        final CustomViewCard card = new CustomViewCard(this, main);
+
+        final ArrayList<HashMap<String,Boolean>> a = new ArrayList<>();
+        a.add(new HashMap<String, Boolean>());
+        a.get(0).put("Да", false);
+        a.get(0).put("Нет", false);
+        a.get(0).put("Не знаю", true);
+        a.add(new HashMap<String, Boolean>());
+        a.get(1).put("Выделения причастного оборота", false);
+        a.get(1).put("Для разделения однородных членов", false);
+        a.get(1).put("Для выделения названий", true);
+
+
+        final ArrayList<CustomViewTest.Element> el = new ArrayList<>();
+        el.add(new CustomViewTest.Element("Тебя зовут гена?",a.get(0)));
+        el.add(new CustomViewTest.Element("Запятая не используется для",a.get(1)));
+
+        class CardForTest{
+            String question;
+            boolean answer;
+
+            CardForTest(String question, boolean answer) {
+                this.question = question;
+                this.answer = answer;
+            }
+        }
+
+        final ArrayList<CardForTest> list = new ArrayList<>();
+        list.add(new CardForTest("Апостроф ставится в конце предложения", false));
+        list.add(new CardForTest("Точка ставится в конце слова", false));
+        list.add(new CardForTest("Восклицательный знак ставится в конце предложения", true));
+
+        test.setElement(el.get(0));
+
+        t = 0;
 
         test.setOnClickListener(new CustomViewTest.OnClickListener() {
             @Override
@@ -61,13 +99,97 @@ public class TestActivity extends AppCompatActivity {
 
             @Override
             public void onClickedRight() {
-                right.setText("yes");
+                t++;
             }
 
             @Override
             public void defaultMethod() {
-                Intent intent = new Intent(TestActivity.this, ResultActivity.class);
-                startActivity(intent);
+
+                if (n == el.size()-1) {
+                    main.removeAllViews();
+                    card.setText(list.get(0).question);
+                    card.setAnswer(list.get(0).answer);
+                    n = 0;
+                    main.addView(card.toView());
+                } else {
+                    n++;
+                    right.setText("Правильно " + t + "/" + el.size()+a.size());
+                    test.setElement(el.get(n));
+                }
+            }
+        });
+
+        card.setOnChangeListener(new CustomViewCard.OnChange() {
+            @Override
+            public void onSwipedWrong() {
+
+            }
+
+            @Override
+            public void onSwipedRight() {
+                t++;
+                right.setText("Правильно " + t + "/" + list.size()+el.size());
+            }
+
+            @Override
+            public void defaultMethod() {
+                if (n == a.size()-1) {
+                    finishTest("Правильно " + t + "/" + list.size()+el.size());
+                } else {
+                    n++;
+                    card.setText(list.get(n).question);
+                    card.setAnswer(list.get(n).answer);
+                }
+            }
+        });
+
+        main.addView(test.toView());
+    }
+
+    void testTest(){
+        final ArrayList<HashMap<String,Boolean>> a = new ArrayList<>();
+        a.add(new HashMap<String, Boolean>());
+        a.get(0).put("Да", false);
+        a.get(0).put("Нет", false);
+        a.get(0).put("Не знаю", true);
+        a.add(new HashMap<String, Boolean>());
+        a.get(1).put("Выделения причастного оборота", false);
+        a.get(1).put("Для разделения однородных членов", false);
+        a.get(1).put("Для выделения названий", true);
+
+
+        final ArrayList<CustomViewTest.Element> el = new ArrayList<>();
+        el.add(new CustomViewTest.Element("Тебя зовут гена?",a.get(0)));
+        el.add(new CustomViewTest.Element("Запятая не используется для",a.get(1)));
+
+        right.setText("Правильно " + 0 + "/" + el.size());
+
+        final CustomViewTest test = new CustomViewTest(this,main);
+        test.setElement(el.get(n));
+
+
+        t = 0;
+        test.setOnClickListener(new CustomViewTest.OnClickListener() {
+            @Override
+            public void onClickedWrong() {
+                right.setText("no");
+            }
+
+            @Override
+            public void onClickedRight() {
+                t++;
+            }
+
+            @Override
+            public void defaultMethod() {
+
+                if (n == el.size()-1) {
+                    finishTest("Правильно " + t + "/" + el.size());
+                } else {
+                    n++;
+                    right.setText("Правильно " + t + "/" + el.size());
+                    test.setElement(el.get(n));
+                }
             }
         });
         main.addView(test.toView());
@@ -146,9 +268,13 @@ public class TestActivity extends AppCompatActivity {
 
             @Override
             public void defaultMethod() {
-                n = n > list.size()-2? n: n+1;
-                a.setText(list.get(n).question);
-                a.setAnswer(list.get(n).answer);
+                if (n == list.size()-1) {
+                    finishTest("Правильно " + t + "/" + list.size());
+                } else {
+                    n++;
+                    a.setText(list.get(n).question);
+                    a.setAnswer(list.get(n).answer);
+                }
             }
         });
         main.addView(a.toView());
