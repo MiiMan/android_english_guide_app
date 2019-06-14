@@ -1,0 +1,35 @@
+﻿{
+    title: "Gennadii",
+    subtitle: "Alkveed",
+
+	section:[
+		{
+			text:"Это главный текст номер 1",
+			subtext:"Это подтекст текста номер 1",
+			targetId:0
+		},
+
+		{
+			text:"Это главный текст номер 2",
+			subtext:"Это подтекст текста номер 2",
+			targetId:1
+		},
+	],
+
+	theory:[
+        {
+            page:[
+                {
+                    text:"Тема 1",
+                    subtext:"Описание 1"
+                },
+                {
+                    text:"Тема 2",
+                    subtext:"Описание 2"
+                },
+            ]
+        },
+	]
+
+
+}

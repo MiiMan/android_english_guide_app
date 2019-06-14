@@ -43,6 +43,7 @@ public class FirstChangeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         prefManager = new PrefManager(this);
         if (!prefManager.isFirstTimeLaunch()) {
             launchActivity();
@@ -81,11 +82,8 @@ public class FirstChangeActivity extends AppCompatActivity {
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // checking for last page
-                // if last page home screen will be launched
                 int current = getItem(+1);
                 if (current < layouts.length) {
-                    // move to next screen
                     viewPager.setCurrentItem(current);
 
                 }

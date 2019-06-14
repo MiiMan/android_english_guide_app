@@ -3,6 +3,7 @@ package com.example.a1.bottombar;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -60,8 +61,8 @@ public class TestActivity extends AppCompatActivity {
         final ArrayList<HashMap<String,Boolean>> a = new ArrayList<>();
         a.add(new HashMap<String, Boolean>());
         a.get(0).put("Да", false);
-        a.get(0).put("Нет", false);
-        a.get(0).put("Не знаю", true);
+        a.get(0).put("Нет", true);
+        a.get(0).put("Не знаю", false);
         a.add(new HashMap<String, Boolean>());
         a.get(1).put("Выделения причастного оборота", false);
         a.get(1).put("Для разделения однородных членов", false);
@@ -69,7 +70,7 @@ public class TestActivity extends AppCompatActivity {
 
 
         final ArrayList<CustomViewTest.Element> el = new ArrayList<>();
-        el.add(new CustomViewTest.Element("Тебя зовут гена?",a.get(0)));
+        el.add(new CustomViewTest.Element("Запятую ставят в конце предложения",a.get(0)));
         el.add(new CustomViewTest.Element("Запятая не используется для",a.get(1)));
 
         class CardForTest{
@@ -113,7 +114,7 @@ public class TestActivity extends AppCompatActivity {
                     main.addView(card.toView());
                 } else {
                     n++;
-                    right.setText("Правильно " + t + "/" + el.size()+a.size());
+                    right.setText("Правильно " + t + "/" + (el.size()+a.size()));
                     test.setElement(el.get(n));
                 }
             }
@@ -128,13 +129,13 @@ public class TestActivity extends AppCompatActivity {
             @Override
             public void onSwipedRight() {
                 t++;
-                right.setText("Правильно " + t + "/" + list.size()+el.size());
+                right.setText("Правильно " + t + "/" + (list.size()+el.size()-1));
             }
 
             @Override
             public void defaultMethod() {
                 if (n == a.size()-1) {
-                    finishTest("Правильно " + t + "/" + list.size()+el.size());
+                    finishTest("Правильно " + t + "/" + (list.size()+el.size()-1));
                 } else {
                     n++;
                     card.setText(list.get(n).question);
@@ -150,8 +151,8 @@ public class TestActivity extends AppCompatActivity {
         final ArrayList<HashMap<String,Boolean>> a = new ArrayList<>();
         a.add(new HashMap<String, Boolean>());
         a.get(0).put("Да", false);
-        a.get(0).put("Нет", false);
-        a.get(0).put("Не знаю", true);
+        a.get(0).put("Нет", true);
+        a.get(0).put("Не знаю", false);
         a.add(new HashMap<String, Boolean>());
         a.get(1).put("Выделения причастного оборота", false);
         a.get(1).put("Для разделения однородных членов", false);
@@ -159,7 +160,7 @@ public class TestActivity extends AppCompatActivity {
 
 
         final ArrayList<CustomViewTest.Element> el = new ArrayList<>();
-        el.add(new CustomViewTest.Element("Тебя зовут гена?",a.get(0)));
+        el.add(new CustomViewTest.Element("Запятую ставят в конце предложения",a.get(0)));
         el.add(new CustomViewTest.Element("Запятая не используется для",a.get(1)));
 
         right.setText("Правильно " + 0 + "/" + el.size());

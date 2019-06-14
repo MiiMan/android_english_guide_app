@@ -8,6 +8,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,6 +32,8 @@ public class TheoryActivity extends AppCompatActivity {
     private String title, lang, inform;
     private LinearLayout linearLayout;
 
+    String res = "{";
+
 
     protected void onCreate(Bundle savedInstanceState) {
         title = getIntent().getExtras().getString("title");
@@ -38,6 +41,9 @@ public class TheoryActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_theory);
+
+        res += "\ttitle: \"" + title + "\", \n";
+        res += "\tsubtitle: \"" + lang + "\", \n";
 
 
         initItem();
@@ -64,6 +70,8 @@ public class TheoryActivity extends AppCompatActivity {
             text = getResources().getStringArray(resource_list.get(title)[0]);
             ex = getResources().getStringArray(resource_list.get(title)[1]);
             inform = getResources().getString(resource_list.get(title)[2]);
+
+            res += "\t information: \"" + inform + "\", \n";
         } catch (Exception e) {
             text = new String[]{"Пока нет информации"};
             ex = new String[]{"Пока нет информации"};
@@ -86,9 +94,12 @@ public class TheoryActivity extends AppCompatActivity {
     private void initInformation(){
         a = findViewById(R.id.example);
 
+        res += "\tsection: [ \n";
+
         for (int i = 0; i < text.length; i++) {
             cardText = new ArrayList<>();
             cardEx = new ArrayList<>();
+
             for (int b = 0; i < text.length; i++, b++) {
                 if (cardText.size() != 0 && text[i].substring(text[i].length() - 1).equals(":")) {
                     i--;
@@ -117,6 +128,7 @@ public class TheoryActivity extends AppCompatActivity {
             View view = getLayoutInflater().inflate(R.layout.caselayout, a,false);
             textView = view.findViewById(R.id.title);
             textView.setText(cardText.get(0));
+            res += "\n\t\t{text: \"" + cardText.get(0) + "\", \n";
 
             if (title.equals("Comma") && cardText.get(0).equals("В деепричастных оборотах;")) {
                 view.setBackgroundColor(Color.CYAN);
@@ -142,7 +154,12 @@ public class TheoryActivity extends AppCompatActivity {
                 textView.setTextColor(Color.DKGRAY);
                 textView.setText(cardEx.get(0));
                 linearLayout.addView(textView);
-            }
+
+                res += "\n\t\t{text: \"" + cardText.get(0) + "\", \n";
+                res += "\t\tsubtext: \"" + cardEx.get(0) + "\", }, \n";
+            } else {
+            res += "\t\tsubtext: \"" + "\", }, \n";
+        }
 
             cardLayout = view.findViewById(R.id.linearlayout);
 
@@ -154,6 +171,9 @@ public class TheoryActivity extends AppCompatActivity {
                 textView.setPadding(0,(int) pxFromDp(10), 0,0);
                 textView.setTextColor(Color.BLACK);
                 textView.setText(cardText.get(b));
+
+                res += "\n\t\t{text: \"" + cardText.get(b) + "\", \n";
+
                 cardLayout.addView(textView);
 
                 if (!cardEx.get(b).equals("")) {
@@ -165,14 +185,19 @@ public class TheoryActivity extends AppCompatActivity {
                     textView.setPadding(0, (int) pxFromDp(10), 0, 0);
                     textView.setTextColor(Color.DKGRAY);
                     textView.setText(cardEx.get(b));
-
                     cardLayout.addView(textView);
+                    res += "\t\tsubtext: \"" + cardEx.get(b) + "\",},\n";
                 }
-            }
+                else {
+                    res += "\t\tsubtext: \"" + "\", }, \n";
+                }
 
+            }
             a.addView(view);
 
         }
+        res += "\n] \n }";
+        Log.d("CustomView", res);
     }
 
     private float pxFromDp(float dp) {

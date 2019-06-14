@@ -11,7 +11,7 @@
     <string name="welcome_1">Я - ваше приложение.</string>
     <string name="welcome_1_title">Привет!</string>
     <string name="welcome_2_title">Обо мне:</string>
-    <string name="welcome_3_title">Выберете сценарий:</string>
+    <string name="welcome_3_title">Выберите сценарий:</string>
     <string name="questionCheck">Проверить</string>
     <string name="firstActivity_next">Далее</string>
     <string name="question_test">Составление вопроса</string>

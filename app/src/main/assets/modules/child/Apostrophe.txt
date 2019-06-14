@@ -1,0 +1,63 @@
+{	title: "Apostrophe", 
+    	subtitle: "јпостроф", 
+    information: "используетс€ дл€ обозначени€ пропуска буквы или цифры ( ' )",	
+
+	section: [ 
+
+    		{text: "ƒл€ образовани€ сокращенных глагольных форм;", 
+    		subtext: "ThatТs all heТs interested in.
+
+     But still, thatТs better than being a hooligan and shooting off zip guns and things like that in his spare time, isnТt it?
+
+     IsnТt it wonderful! whispered Charlie.
+
+     HeТll be perfectly safe, said Mr Wonka, giggling slightly.
+
+     I donТt want to think about it! shrieked MrsGloop.",
+        targetId:0},
+    
+    		{text: "ƒл€ образовани€ прит€жательного падежа существительных:", 
+    		subtext: "",
+    		targetId:0},
+    
+    		{text: "1)ќбозначающих лица или животных;", 
+    		subtext: "",
+    		 targetId:0},
+    
+    		{text: "2)¬ устойчивых выражени€х;", 
+    		subtext: "",
+    		 targetId:0},
+    
+    		{text: "«нак апострофа указывает на пропуск букв:", 
+    		subtext: "",
+    		 targetId:0},
+    
+    		{text: "1)¬ сокращени€х из нескольких слов;", 
+    		subtext: "gТby (good by), soТs (so as), donТt (do not), IТm (I am) и.т.п.",
+    		targetId:0},
+    
+    		{text: "2)¬ сокращени€х из одного слова;", 
+    		subtext: "tТday (today), Тcause (because), doinТ (doing) и.т.п.",
+    		targetId:0},
+    
+    		{text: "3)ћожет встречатьс€ в других сокращени€х, например вместо первых двух цифр года;", 
+    		subtext: "winter of Т95 (1995)",
+    		targetId:0},
+    
+    ],
+
+theory:[
+        {
+            page:[
+                {
+                    text:"“ема 1",
+                    subtext:"ќписание 1"
+                },
+                {
+                    text:"“ема 2",
+                    subtext:"ќписание 2"
+                },
+            ]
+        },
+	]
+     }

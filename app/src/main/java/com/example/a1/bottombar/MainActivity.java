@@ -4,15 +4,22 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import com.example.a1.bottombar.LoadFile.ContentPath;
+import com.example.a1.bottombar.LoadFile.FileModule;
+
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -133,19 +140,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayShowHomeEnabled(false);
-        actionBar.setDisplayShowTitleEnabled(false);
-        actionBar.setDisplayShowCustomEnabled(true);
-        actionBar.setCustomView(R.layout.actionbar);
-
-        prefManager = new PrefManager(this);
-        currentModes = getResources().getStringArray(R.array.scenario_name);
-        setMode(prefManager.getCurrentMode());
-
-        spinner = actionBar.getCustomView().findViewById(R.id.spinner);
-        spinner.setSelection(currentMode);
-        spinner.setOnItemSelectedListener(spinnerClickListener);
+        initTop();
 
         setContentView(R.layout.activity_main);
 
@@ -169,6 +164,24 @@ public class MainActivity extends AppCompatActivity {
             navigation.getMenu().getItem(0).setChecked(true);
             navigation.getMenu().getItem(1).setChecked(false);
         }
+    }
+
+    private void initTop(){
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayShowHomeEnabled(false);
+        actionBar.setDisplayShowTitleEnabled(false);
+        actionBar.setDisplayShowCustomEnabled(true);
+        actionBar.setCustomView(R.layout.actionbar);
+
+        prefManager = new PrefManager(this);
+
+
+        currentModes = getResources().getStringArray(R.array.scenario_name);
+        setMode(prefManager.getCurrentMode());
+
+        spinner = actionBar.getCustomView().findViewById(R.id.spinner);
+        spinner.setSelection(currentMode);
+        spinner.setOnItemSelectedListener(spinnerClickListener);
     }
 
     private void initTheory() {
@@ -220,11 +233,6 @@ public class MainActivity extends AppCompatActivity {
         recyclerViewMain.setAdapter(itemAdapterMain);
         recyclerViewMain.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
-
-        SimpleButton b = new SimpleButtonDesc(R.layout.button_with_desc, this, linearLayoutMain,
-                getString(R.string.question_test_desc),"Сказки о моем проекте", R.mipmap.scaz);
-        b.setOnClickListener(onClickListenerButtonText);
-        linearLayoutMain.addView(b.toView());
 
         SimpleButton a = new SimpleButton(R.layout.mainbutton, this, linearLayoutMain,
                 getString(R.string.question_test), R.mipmap.question);

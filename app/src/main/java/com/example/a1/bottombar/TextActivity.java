@@ -38,6 +38,7 @@ public class TextActivity extends AppCompatActivity {
         if (title.equals(getString(R.string.deepr))) {
             for (int i = 0; i < 2; i++) {
                 arrayList.add(new String[]{getResources().getStringArray(R.array.deepr_info)[i], getResources().getStringArray(R.array.deepr_text)[i]});
+
             }
         }
         view_text = new View[arrayList.size()];
